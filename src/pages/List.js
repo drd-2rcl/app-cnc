@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, StyleSheet, AsyncStorage, Text, Image } from 'react-native';
 
 import logo from '../assets/logo.png';
+import SpotList from  '../components/SpotList';
 
 export default function List() {
   const [techs, setTechs] = useState([]);
@@ -16,6 +17,7 @@ export default function List() {
   return (
     <SafeAreaView style={styles.container}>
       <Image style={styles.logo} source={logo}/>
+      <SpotList />
     </SafeAreaView>
   )
 }
