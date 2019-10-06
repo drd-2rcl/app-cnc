@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, Image, StyleSheet, Text, TextInput } from 'react-native';
+import { View, KeyboardAvoidingView, Image, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
 
 import logo from '../assets/logo.png';
 
 export default function Login() {
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView behavior="padding" style={styles.container}>
       <Image source={logo} />
 
       <View style={styles.form}>
@@ -18,8 +18,21 @@ export default function Login() {
           autoCapitalize="none"
           autoCorrect={false}
         />
+
+        <Text style={styles.label}>TECNOLOGIAS *</Text>
+        <TextInput 
+          style={styles.input}
+          placeholder="Tecnologias de interesse"
+          placeholderTextColor="#999"
+          autoCapitalize="words"
+          autoCorrect={false}
+        />
+
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Encontrar spots</Text>
+        </TouchableOpacity>
       </View>
-    </View>
+    </KeyboardAvoidingView>
   )
 }
 
@@ -51,5 +64,19 @@ const styles = StyleSheet.create({
     height: 44,
     marginBottom: 20,
     borderRadius: 2
+  },
+
+  button: {
+    height: 42,
+    backgroundColor: '#f05a5b',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 2,
+  },
+
+  buttonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 16,
   }
 });
